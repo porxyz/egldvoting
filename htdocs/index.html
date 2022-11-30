@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>EGLDVoting: Decentralised voting system</title>
+
+<script src="functions/js/utils.js" type="text/javascript"></script>
+<script src="functions/js/elrond_api.js" type="text/javascript"></script>
+<script src="main_page.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+	<div id="page_container">
+		<span id = "page_title">EGLDVoting: Decentralised voting system</span> <br/>
+		<span id = "page_subtitle">Powered by Elrond Blockchain</span> <br/>
+		
+		<table id = "page_table">
+		<tr>
+		<td style="width:30%;">
+			<div id="left_app_gadget"></div>
+		</td>
+		<td>
+			<div id = "app_description">
+				<span>
+				Unlike conventional contests where the contestant is chosen by voting over SMS or something similar, we developed a voting system 
+				using Smart Contract technology powered by the Elrond network.
+				There is no way for us, the developers, to cheat the platform and choose the contestant we desire.<br/><br/>
+				Since we use Smart Contract technology on a blockchain, all of the data is checked by every validator node in the Elrond network.
+				All data inside a blockchain can be seen by everyone with a blockchain explorer. <br/><br/>
+				You can read more about Smart Contracts and Blockchain technology <b>here</b> (do to). <br/><br/><br/>
+				</span>
+			
+				<span id="registering_period_info">
+					You need to pay <b>15 EGLD</b> in order to register yourself as a contestant. <br/>
+					All the money collected from this voting campaign will be transfered to the winner's wallet.
+					<br/><br/><br/>
+					<span>Registering period ends in <span id="registering_period_end_disp"><span class="loading_text_animation"></span> </span>.</span>
+					<br/><br/><br/>
+					<span style="font-weight:bold; font-size:135%;">Good luck!</span><br/>
+				</span>
+			
+				<span id="voting_period_info">
+					You need to pay <b>1 EGLD</b> in order to vote and you can't vote more than one time. <br/>
+					All the money collected from this voting campaign will be transfered to the winner's wallet.
+					<br/><br/><br/>
+					<span>Voting period ends in <span id="voting_period_end_disp"><span class="loading_text_animation"></span> </span>.</span>
+					<br/><br/><br/>
+					<span style="font-weight:bold; font-size:135%;">Happy voting!</span><br/>
+				</span>
+			
+				<span id="contest_finished_info">
+					<span style="font-weight:bold; font-size:135%;">The voting period is over!</span><br/>
+					<br/><br/><br/>
+					<span>  <span class="loading_text_animation"></span> won the competition with x votes (percentage)! </span>
+				</span>
+			</div>
+		</td>
+		</tr>
+		</table> 
+	</div>
+</body>
+
+</html>
