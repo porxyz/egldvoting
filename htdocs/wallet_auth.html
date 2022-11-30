@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>EGLDVoting: Decentralised voting system</title>
+
+<script src="functions/js/utils.js" type="text/javascript"></script>
+<script src="functions/js/elrond_api.js" type="text/javascript"></script>
+<script src="wallet_auth.js" type="text/javascript"></script>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+
+<body>
+	<div id="page_container">
+		<span id = "page_title">EGLDVoting: Decentralised voting system</span> <br/>
+		<span id = "page_subtitle">Powered by Elrond Blockchain</span> <br/>
+		
+		<div id="wallet_auth_form">
+			<span id="wallet_auth_form_title">Please login with your Elrond Wallet</span>
+			
+			<div id="wallet_auth_button" class="left_gadget_vote_btn" onclick="open_auth_dial();">
+				<span style="position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);">Upload PEM</span>
+			</div>
+			
+			<span id="wallet_auth_form_err_msg"></span>
+			
+			<input style="display:none;" type="file" accept=".txt, .pem, .json" onchange="handle_wallet_key_upload();" id="wallet_key_input"/>
+		<div>
+	</div>
+</body>
+
+</html>

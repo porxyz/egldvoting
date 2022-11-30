@@ -1,0 +1,208 @@
+html, body
+{
+	margin:0;
+	padding:0;
+	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	background-color:black;
+	color:white;
+}
+
+@media only screen and (orientation:portrait) 
+{
+	div#page_container
+	{
+		font-size:calc(1.35vh) !important;
+	}
+	
+	#page_title
+	{
+		font-size:150% !important;
+	}
+	
+	#app_description
+	{
+		padding-top: 1.5vh !important;
+		padding-left:0 !important;
+	}
+	
+	#left_app_gadget
+	{
+		font-size:100% !important;
+	}
+}
+
+@font-face 
+{
+	font-family: "coco-gothic";
+	src: url('media/fonts/coco-gothic.light.ttf');
+}
+
+table td
+{
+	vertical-align:top;
+}
+
+div#page_container
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100vw;
+	height:100vh;
+	font-size:calc(12px + 1vh);
+}
+
+#page_title
+{
+	position:relative;
+	margin-top:3%;
+	margin-left:3%;
+	display:inline-block;
+	font-weight:bold;
+	font-size:200%;
+	font-family: coco-gothic;
+	user-select:none;
+}
+
+#page_subtitle
+{
+	position:relative;
+	display:inline-block;
+	margin-left:3%;
+	font-weight:bold;
+	font-style:italic;
+	font-family: coco-gothic;
+	user-select:none;
+}
+
+#page_table
+{
+	margin-top:3%;
+	margin-left:3%; 
+	margin-right:3%;
+}
+
+#app_description
+{
+	position:relative;
+	display:inline-block;
+	padding-left:4%;
+	box-sizing:border-box;
+	text-align: justify;
+}
+
+#left_app_gadget
+{
+	position:relative;
+	display:inline-block;
+	box-sizing:border-box;
+	font-size:80%;
+	width:100%;
+}
+
+.spn_link
+{
+	font-weight:bold;
+}
+
+.spn_link:hover
+{
+	text-decoration:underline;
+	cursor:pointer;
+}
+
+.spn_link:active
+{
+	text-decoration:underline;
+}
+
+.left_gadget_vote_btn
+{
+	position:relative;
+	width:8vh;
+	height:2vh;
+	border:1px solid white;
+	box-sizing:border-box;
+	margin-right:2vh;
+	padding:2vh;
+	font-weight:bold;
+	border-radius:0.8vh;
+	user-select:none;
+	white-space: nowrap;
+}
+
+.left_gadget_vote_btn:hover
+{
+	cursor:pointer;
+	box-shadow:0px 0px 1px 3px rgba(255,255,255,0.8);
+}
+
+.left_gadget_vote_btn:active
+{
+	box-shadow:0px 0px 1px 3px rgba(255,255,255,0.8);
+}
+
+#registering_period_end_disp
+{
+	font-weight:bold;
+}
+
+#voting_period_end_disp
+{
+	font-weight:bold;
+}
+
+#registering_period_info
+{
+	display:none;
+}
+
+#voting_period_info
+{
+	display:none;
+}
+
+#contest_finished_info
+{
+	display:none;
+}
+
+#wallet_auth_form
+{
+	font-size:80%;
+}
+
+#wallet_auth_form_title
+{
+	position:relative;
+	display:inline-block;
+	margin-left:3%;
+	margin-top:5%;
+	font-weight:bold;
+}
+
+#wallet_auth_form_err_msg
+{
+	position:relative;
+	display:inline-block;
+	margin-left:3%;
+	margin-top:2%;
+	color:red;
+}
+
+#wallet_auth_button
+{
+	margin-left:3%;
+	margin-top:1%;
+	width:18vh;
+	height:5vh;
+}
+
+#transaction_process_msg
+{
+	position:relative;
+	display:inline-block;
+	margin-left:3%;
+	margin-top:5%;
+	font-size:80%;
+}
