@@ -142,30 +142,59 @@ div#page_container
 	box-shadow:0px 0px 1px 3px rgba(255,255,255,0.8);
 }
 
-#registering_period_end_disp
+
+.left_register_input
+{
+	border:1px solid white;
+	background-color:transparent;
+	margin-bottom:1vh;
+	color:white;
+	width:80%;
+	height:3.5vh;
+	box-sizing:border-box;
+	border-radius:0.5vh;
+	padding-left:1vh;
+}
+
+.left_register_input:focus
+{
+	outline:1px solid white;
+	box-shadow:0px 0px 1px 3px rgba(255,255,255,0.8);
+}
+
+.left_register_input::placeholder
+{
+	color:white;
+	font-style:italic;
+}
+
+#left_register_photo
+{
+	position:relative;
+	display:block;
+	border:1px solid white;
+	width:12vh;
+	height:13.68vh;
+	background-size:100% 100%;
+}
+
+#left_register_err_msg
+{
+	position:relative;
+	display:inline-block;
+	color:red;
+}
+
+#registering_period_end_disp, #registering_current_peers_disp, #registering_max_peers_disp, #voting_period_end_disp
 {
 	font-weight:bold;
 }
 
-#voting_period_end_disp
-{
-	font-weight:bold;
-}
-
-#registering_period_info
+#registering_period_info, #voting_period_info, #contest_finish_info
 {
 	display:none;
 }
 
-#voting_period_info
-{
-	display:none;
-}
-
-#contest_finished_info
-{
-	display:none;
-}
 
 #wallet_auth_form
 {
@@ -198,7 +227,7 @@ div#page_container
 	height:5vh;
 }
 
-#transaction_process_msg
+#transaction_process_msg, #wallet_search_results
 {
 	position:relative;
 	display:inline-block;

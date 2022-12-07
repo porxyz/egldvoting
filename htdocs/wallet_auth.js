@@ -36,13 +36,15 @@ function handle_wallet_key_upload()
 				return;
 			}
 		
-			if(!server_response.hasOwnProperty("status") || server_response.status != "success")
+			if(!server_response.hasOwnProperty("status") || !server_response.hasOwnProperty("hex_key") || server_response.status != "success")
 			{
 				error_box.innerHTML = "The input PEM file is invalid.";
 				return;
 			}
 		
 			localStorage.setItem("wallet_key",reader.result);
+			localStorage.setItem("wallet_key_hex",server_response.hex_key);
+			
 			window.location.href = getURLparam("redir");
 		}, post_args);
 	

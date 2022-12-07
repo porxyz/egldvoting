@@ -1,10 +1,10 @@
 
-function local_check_voting_data_valid()
+function local_check_registering_data_valid()
 {
-	let voting_period_end = localStorage.getItem("SC_voting_period_end_timestamp");
-	let user_voted = localStorage.getItem("user_voted");
+	let registering_period_end = localStorage.getItem("SC_registering_period_end_timestamp");
+	let user_registered = localStorage.getItem("user_registered");
 	
-	if(voting_period_end === null || voting_period_end < ((new Date()).getTime() / 1000) || user_voted == "true")
+	if(registering_period_end === null || registering_period_end < ((new Date()).getTime() / 1000) || user_registered == "true")
 	{
 		return false;
 	}
@@ -16,12 +16,7 @@ function local_check_voting_data_valid()
 	}
 	catch(e)
 	{
-		return false;
-	}
-	
-	if(!contestants_list.hasOwnProperty(getURLparam("addr")))
-	{
-		return false;
+		return true;
 	}
 	
 	return true;
@@ -62,11 +57,11 @@ function animate_loading_text_p()
 
 
 function initiate_payment()
-{	
+{
 	let msg_box = document.getElementById("transaction_process_msg");
-	let post_args = {SC: SC_ADDR, pem: localStorage.getItem("wallet_key"), addr: getURLparam("addr")};
+	let post_args = {SC: SC_ADDR, pem: localStorage.getItem("wallet_key"), data: getURLparam("data")};
 	
-	make_http_request("action/vote.php","POST",15,function(){msg_box.innerHTML = "Network error. Please try again latter.";},
+	make_http_request("action/register.php","POST",15,function(){msg_box.innerHTML = "Network error. Please try again latter.";},
 	function(req) 
 	{
 		let server_response = null;
@@ -108,7 +103,7 @@ function initiate_payment()
 				response_msg += "<span style='color:green;'>The transaction was completed successfully.</span><br/>";
 				response_msg += "<span>Please check on the Blockchain Explorer.</span>";
 				
-				localStorage.setItem("user_voted","true");
+				localStorage.setItem("user_registered","true");
 			}
 			
 			msg_box.innerHTML = response_msg;
@@ -120,13 +115,13 @@ function initiate_payment()
 
 function page_load()
 {
-	if(!local_check_voting_data_valid())
+	if(!local_check_registering_data_valid())
 	{
 		document.getElementById("transaction_process_msg").innerHTML = "There is a issue with the request. <br/> If you think this is a mistake, please try again later.";
 	}
 	else if(!check_user_auth())
 	{
-		window.location.href = "wallet_auth.html?redir=" + encodeURIComponent("vote_participant.html" + window.location.search);
+		window.location.href = "wallet_auth.html?redir=" + encodeURIComponent("register_participant.html" + window.location.search);
 	}
 	else
 	{
