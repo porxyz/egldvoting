@@ -14,3 +14,5 @@
 #####  There will be a registering period and and a voting period.
 
 #####  A countdown will be included in the web interface and after that, the winner will be announced.
+
+#### https://egldvoting.rf.gd/
