@@ -579,6 +579,7 @@ function submit_register_form()
 
 function draw_registering_gadget()
 {
+
 	//user is registered
 	if(localStorage.getItem("user_registered") == "true" && localStorage.getItem("wallet_key_hex") != null && contestants_list != null && contestants_list.hasOwnProperty(localStorage.getItem("wallet_key_hex"))) 
 	{
@@ -594,7 +595,7 @@ function draw_registering_gadget()
 		left_gadget.innerHTML = register_form_html;
 		
 		return;
-	}
+	}	
 	
 	let register_form_html = "<span style='font-weight:bold;'>Register as a constestant</span><br/><br/><br/>";
 	register_form_html += "<div id='left_register_photo' style=\"background-image:url('media/images/default_profile_photo.png');\"></div><br/>";
@@ -609,6 +610,16 @@ function draw_registering_gadget()
 	register_form_html += "<span style='position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);'>Register</span></div></td></tr></table>";
 	
 	let left_gadget = document.getElementById("left_app_gadget");
+	
+	/*
+	Preventing reset of the widget
+	Reseting the widget will cause loss of input data
+	*/
+	if(left_gadget.innerHTML.includes("Register as a constestant"))
+	{
+		return;
+	}
+	
 	left_gadget.innerHTML = register_form_html;
 }
 
