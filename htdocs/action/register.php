@@ -14,7 +14,7 @@ if($dec_data === NULL or !property_exists($dec_data,"name") or !property_exists(
 	die(json_encode(array("status" => "error")));
 }
 
-$SC_args = array(bin2hex($dec_data->name), dechex($dec_data->age), bin2hex($dec_data->desc), bin2hex($dec_data->photo_url));
+$SC_args = array(bin2hex($dec_data->name), str_pad(dechex($dec_data->age), 2, "0", STR_PAD_LEFT), bin2hex($dec_data->desc), bin2hex($dec_data->photo_url));
 
 $result = callSCfunction($_POST["SC"],"15000000000000000000",$_POST["pem"],"register_participant",$SC_args);
 if($result < 0)
