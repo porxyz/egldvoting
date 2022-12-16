@@ -202,8 +202,8 @@ function get_contestant_data(hex_addr,req_id)
 			{
 				localStorage.setItem("SC_last_contestants_list_query_time",(new Date()).getTime());
 			
-				//we reached max participants or registration period expired
-				if(api_data.length === max_allowed_contestants || (registering_period_end_timestamp !== false && (registering_period_end_timestamp * 1000 < (new Date()).getTime()) ) )
+				//we reached max participants or voting period expired
+				if(api_data.length === max_allowed_contestants || (voting_period_end_timestamp !== false && (voting_period_end_timestamp * 1000 < (new Date()).getTime()) ) )
 				{
 					localStorage.setItem("SC_contestants_list_final","true");
 				}
