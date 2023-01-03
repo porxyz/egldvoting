@@ -659,7 +659,7 @@ function check_competition_status()
 	
 	if(voting_period_end_timestamp < t_now)
 	{
-		document.getElementById("contest_finish_info").style.display = "inline-block;"
+		document.getElementById("contest_finish_info").style.display = "inline-block"
 		document.getElementById("registering_period_info").style.display = "none";
 		document.getElementById("voting_period_info").style.display = "none";
 		draw_winning_info();
